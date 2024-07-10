@@ -1,0 +1,46 @@
+# production, staging & live EMAP settings
+compose/**/prod/*.env
+compose/**/staging/*.env
+monitoring/*.env
+compose/**/docker-testing/*.env
+.env
+
+# IDEs - PyCharm & VSCode
+.idea/
+.vscode
+
+# MacOS .DS_Store files
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+#*.ipynb
+
+# caches
+__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache
+.ruff_cache
+.hypothesis
+.pytest_cache
+.coverage
+
+#.ipython
+history.sqlite
+
+# pip installer logs
+pip-log.txt
+
+# pyenv virtualenv
+.python-version
+
+# Other
+tmp
+
+# package
+informus.egg-info
+
+# testing
+coverage.xml
+sut.csv
