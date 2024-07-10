@@ -43,12 +43,12 @@ function App() {
 
   return (
     <div className="App">
-      <input
+      {/* <input
         type="text"
         value={content}
         onChange={(e) => setContent(e.target.value)}
         placeholder="Enter content"
-      />
+      /> */}
 
       {/* <button onClick={handlePost}>Send POST Request</button> */}
 
