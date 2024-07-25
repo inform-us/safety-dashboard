@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  # mongodb:
+  #   container_name: safety_dashboard-db
+  #   image: mongo:7.0.5-jammy
+  #   restart: on-failure
+  #   ports:
+  #     - "27018:27017"
+  #   volumes:
+  #     - type: volume
+  #       source: mongodb-data-volume
+  #       target: /data/db
+  #     - type: volume
+  #       source: mongodb-config-volume
+  #       target: /data/configdb
+  #   networks:
+  #     - app-net
+
+  api:
+    container_name: safety_dashboard-api
+    image: safety_dashboard-api:current
+    restart: on-failure
+    env_file:
+      - compose/api/dev-docker/api.env
+    depends_on:
+      - mongodb
+    networks:
+      - app-net
+    build:
+      context: .
+      dockerfile: ./compose/api/Dockerfile
+
+  nginx:
+    container_name: safety_dashboard-nginx
+    image: nginx:1.23.3-alpine
+    ports:
+      - "5702:82" # api
+    volumes:
+      - type: bind
+        source: ./nginx/conf.d/api.conf
+        target: /etc/nginx/conf.d/api.conf
+    depends_on:
+      - api
+    networks:
+      - app-net
+
+networks:
+  app-net:
+
+volumes:
+  mongodb-data-volume:
+  mongodb-config-volume:
