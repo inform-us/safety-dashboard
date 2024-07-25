@@ -4,6 +4,7 @@ compose/**/staging/*.env
 monitoring/*.env
 compose/**/docker-testing/*.env
 .env
+.env.production
 
 # IDEs - PyCharm & VSCode
 .idea/

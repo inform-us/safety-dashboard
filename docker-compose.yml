@@ -1,33 +1,31 @@
-version: "3.8"
-
 services:
-  # mongodb:
-  #   container_name: safety_dashboard-db
-  #   image: mongo:7.0.5-jammy
-  #   restart: on-failure
-  #   volumes:
-  #     - type: volume
-  #       source: mongodb-data-volume
-  #       target: /data/db
-  #     - type: volume
-  #       source: mongodb-config-volume
-  #       target: /data/configdb
-  #   networks:
-  #     - app-net
+  mongodb:
+    container_name: safety_dashboard-db
+    image: mongo:7.0.5-jammy
+    restart: on-failure
+    volumes:
+      - type: volume
+        source: mongodb-data-volume
+        target: /data/db
+      - type: volume
+        source: mongodb-config-volume
+        target: /data/configdb
+    networks:
+      - app-net
 
   api:
     container_name: safety_dashboard-api
     image: safety_dashboard-api:current
     restart: on-failure
     env_file:
-      - compose/api/prod/api.env
+      - compose/backend/prod/api.env
     depends_on:
       - mongodb
     networks:
       - app-net
     build:
       context: .
-      dockerfile: ./compose/api/Dockerfile
+      dockerfile: ./compose/backend/Dockerfile
       args:
         - HTTP_PROXY=${HTTP_PROXY}
         - http_proxy=${http_proxy}
@@ -43,7 +41,7 @@ services:
     networks:
       - app-net
     build:
-      context: ui
+      context: frontend # this is the directory of the frontend code i.e. ./frontend
       dockerfile: ../compose/ui/Dockerfile
       args:
         - HTTP_PROXY=${HTTP_PROXY}

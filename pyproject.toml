@@ -1,0 +1,169 @@
+[project]
+name = "safety_dashboard_api"
+dynamic = ["version"]
+authors = [
+    {email = "arc.collaborations@ucl.ac.uk", name = "Centre for Advanced Research Computing Healthcare Subgroup, UCL"},
+]
+description="API backend for the INFORMus Critical Care Dashboard"
+classifiers=[
+    "Development Status :: 4 - Beta ",
+    "Programming Language :: Python :: 3",
+    "Operating System :: POSIX :: Linux",
+]
+requires-python = ">=3.10"
+
+dependencies = [
+    "aiofiles==0.5.0",
+    "aiopg>=1.4",
+    "APScheduler==3.6.3",
+    "arrow==1.2.3",
+    "backcall==0.2.0",
+    "certifi==2020.6.20",
+    "chardet==3.0.4",
+    "environs==8.0.0",
+    "fastapi==0.61.1",
+    "httptools==0.5.0",
+    "ipython==7.16.1",
+    "Jinja2==2.11.2",
+    "MarkupSafe==1.1.1", 
+    # 👆 dependency of Jinja2 but we need a downgraded version for compatibility
+    # with fastapi TODO: can probably relax this when updating everything else
+    "marshmallow==3.8.0",
+    "motor==3.3.2",
+    "numpy==1.21.5",
+    "pandas==1.4.2",
+    "psycopg2-binary==2.9.5",
+    "pydantic==1.6.1",
+    "python-dateutil==2.8.1",
+    "python-dotenv==0.14.0",
+    "python-multipart==0.0.5",
+    "pytz==2020.1",
+    "requests==2.24.0",
+    "starlette==0.13.6",
+    "tzlocal==2.1",
+    "uvicorn==0.30.1",
+    "uvloop==0.17.0; platform_system != 'Windows'", # https://stackoverflow.com/a/75711133/1444054
+    "websockets==12.0"
+]
+[project.optional-dependencies]
+dev = [
+    "httpx",
+    "mypy", # was pinned to 0.782 (incompatible with typed-ast)
+    "pandas-stubs",
+    "pre-commit",
+    "pyfakefs",
+    "pyparsing", # was pinned to 2.4.7
+    "pyrsistent", # was pinned to 0.17.3
+    "pytest>8", # was pinned to 6.1.0
+    "pytest-asyncio", # was pinned to 0.14.0
+    "pytest-freezegun",
+    "pytest-cov",
+    "pytest-mock",
+    "types-PyYAML",
+    "types-Pygments",
+    "types-colorama",
+    "types-psycopg2",
+    "types-pyOpenSSL",
+    "types-python-dateutil",
+    "types-requests",
+    "types-setuptools",
+    "types-ujson",
+]
+datascience = [
+    "jupyter", # was pinned to 1.0.0
+    "informus[dev]" # datascience is a superset of dev 
+]
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools",
+    "setuptools-scm",
+]
+[tool.setuptools]
+packages = ["backend"]
+
+
+[tool.ruff]
+exclude = [
+    'ui',
+]
+line-length = 120
+
+[tool.ruff.lint]
+# Which rules to choose and suppress w.r.t defaults.
+# - https://docs.astral.sh/ruff/rules/
+select = [ 
+    "I001", # isort
+]
+ignore = [
+    "E501", # line too long
+    "E712", # comparison to True (lots of false positives when using pandas) 
+]
+
+[tool.docformatter]
+wrap-summaries = 120
+wrap-descriptions = 120
+# Docstring style is sphinx by default. For others add (e.g.)
+# style = "google"
+# See https://docformatter.readthedocs.io/en/latest/usage.html
+# https://docformatter.readthedocs.io/en/latest/configuration.html
+# https://docformatter.readthedocs.io/en/latest/usage.html#use-with-pre-commit
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+exclude = 'data-science/.*'
+plugins = ["numpy.typing.mypy_plugin"]
+
+[[tool.mypy.overrides]]
+module = "backend.tests.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = [
+    'aiopg',
+    'apscheduler.*',
+    'arrow',
+    'bokeh',
+    'boltons',
+    'cached_property',
+    'certifi',
+    'click',
+    'environs',
+    'idna',
+    'motor.*',
+    'numpy',
+    'orjson',
+    'pandas',
+    'panel',
+    'param',
+    'psycopg2',
+    'pymongo',
+    'uvicorn'
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+# Promote ALL warnings (except for DeprecationWarnings and a couple of specific
+# ImportWarnings) to errors (and fail the tests).
+filterwarnings = [
+    "error",
+    "ignore::DeprecationWarning",
+    "ignore:.*falling back to find_module.*:ImportWarning",
+    "ignore:.*falling back to load_module.*:ImportWarning", # older versions of six cause these warnings in 3.10+
+]
+# TODO: we can remove these last two suppressions when we update pandas (six is
+# a 2nd generation dependency of pandas).
+
+
+# Run coverage reporting. Make an XML report (for VS code to read and for CI parsing).
+addopts = "--cov=api --cov-report xml"
+
+[tool.coverage]
+run.omit = [
+    "backend/tests/*", # Don't report coverage over the tests themselves.
+]

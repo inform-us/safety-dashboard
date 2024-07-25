@@ -37,14 +37,14 @@ ENV VIRTUAL_ENV=/venv
 COPY --from=build-stage --chown=apiuser:apiuser $VIRTUAL_ENV $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-COPY --chown=apiuser:apiuser ./api ./api
+COPY --chown=apiuser:apiuser ./backend ./backend
 RUN pip install .
 
 FROM run-stage AS debug
 RUN pip install debugpy
 # the port can be set to anything as long as it is the same as the proxy_pass port set in `/nginx/conf.d/api.conf`
-ENTRYPOINT ["python",  "-m",  "debugpy",  "--wait-for-client", "--listen",  "0.0.0.0:5678", "-m", "uvicorn", "api.main:app", "--host=0.0.0.0", "--port=8000", "--no-access-log"]
+ENTRYPOINT ["python",  "-m",  "debugpy",  "--wait-for-client", "--listen",  "0.0.0.0:5678", "-m", "uvicorn", "backend.main:app", "--host=0.0.0.0", "--port=8000", "--no-access-log"]
 
 FROM run-stage AS run
 # the port can be set to anything as long as it is the same as the proxy_pass port set in `/nginx/conf.d/api.conf`
-ENTRYPOINT ["uvicorn", "api.main:app", "--host=0.0.0.0", "--port=8000", "--no-access-log"]
+ENTRYPOINT ["uvicorn", "backend.main:app", "--host=0.0.0.0", "--port=8000", "--no-access-log"]
