@@ -10,26 +10,18 @@ docker-compose -f docker-dev-api.yml up --build
 
 This will start the `safety_dashboard-api`, `safety_dashboard-nginx`, and `safety_dashboard-db` containers.
 
+The api will be available at http://localhost:5702
+
+You can access the Swagger Api to test out endpoints at http://localhost:5702/docs
+
 The `safety_dashboard-db` container has been mapped locally to `port: 27018` while running the dev environment. So if you prefer to inspect the database visually, you can run [MongoDB Compass](https://www.mongodb.com/products/tools/compass) on port `27018`.
 
-## Prod environment
+### Stop
 
-On the GAE the folder `/gae/safety-dashboard/safety-dashboard-prod` contains the `main` branch of this repository. To deploy the live dashboard on the GAE:
+To stop the front end press `ctrl-c` (see `ui/README.md` for more details of front end).
 
-- In the `.env` file in the project root directory, ensure `RUNNING_ENV` is set to `production`
-- Copy `compose/backend/prod/api.env.example` to `compose/backend/prod/api.env` and enter authentication information
-  - `EMAPDB_HOST` should be `uclvldddtaeps02.xuclh.nhs.uk`
-  - `EMAPDB_USER` and `EMAPDB_PASSWORD` should be your EMAP username and password
-  - `EMAPDB_SCHEMA` should be `informus` to save data to the production database schema on UDS
-  - `EMAPDB_WRITE` should be `true` to allow writing to the UDS
-- Ensure that `.env.production` exists in the `ui` directory with the following information:
-  - `VITE_APP_NODE_ENV` is set to `production`
-  - `VITE_APP_BACKEND_URL` is set to `http://uclvlddpragae12:5702/api`. This tells the front end where the API exists to connect to the back end.
-
-### Starting up
-
-From PROJECT_ROOT directory located at `/gae/safety-dashboard/safety-dashboard-prod` on `uclvlddpragae12`:
+To bring down the Docker containers:
 
 ```shell script
-docker compose -p safety-dashboard up --build -d
+docker-compose -f docker-dev-api.yml down
 ```
