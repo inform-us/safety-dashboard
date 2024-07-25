@@ -1,1 +1,1 @@
-# safety-dashboard
+# Informus Safety Dashboard
