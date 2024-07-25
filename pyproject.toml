@@ -13,50 +13,27 @@ classifiers=[
 requires-python = ">=3.10"
 
 dependencies = [
-    "aiofiles==0.5.0",
-    "aiopg>=1.4",
-    "APScheduler==3.6.3",
-    "arrow==1.2.3",
-    "backcall==0.2.0",
-    "certifi==2020.6.20",
-    "chardet==3.0.4",
-    "environs==8.0.0",
-    "fastapi==0.61.1",
-    "httptools==0.5.0",
-    "ipython==7.16.1",
-    "Jinja2==2.11.2",
-    "MarkupSafe==1.1.1", 
-    # 👆 dependency of Jinja2 but we need a downgraded version for compatibility
-    # with fastapi TODO: can probably relax this when updating everything else
-    "marshmallow==3.8.0",
-    "motor==3.3.2",
-    "numpy==1.21.5",
-    "pandas==1.4.2",
-    "psycopg2-binary==2.9.5",
-    "pydantic==1.6.1",
-    "python-dateutil==2.8.1",
-    "python-dotenv==0.14.0",
-    "python-multipart==0.0.5",
-    "pytz==2020.1",
-    "requests==2.24.0",
-    "starlette==0.13.6",
-    "tzlocal==2.1",
-    "uvicorn==0.30.1",
-    "uvloop==0.17.0; platform_system != 'Windows'", # https://stackoverflow.com/a/75711133/1444054
-    "websockets==12.0"
+    "aiopg>=1.4", # async postgres for EMAP
+    "APScheduler", # scheduler for tasks
+    "arrow", # better alternative to python's builtin datetime
+    "environs", # for environment variable handling
+    "fastapi", # our main web api framework
+    "ipython", # useful for debugging live running containers on the GAEs
+    "Jinja2", # templating engine for fastapi, used in the backend ui
+    "motor", # async mongodb (also installs pymongo which we use directly)
+    "numpy<2.0", # remove this when we support pandas >=2.0 as it comes with pandas
+    "pandas >=1.4, <2", # our main data handling library (also installs numpy which we use directly)
 ]
 [project.optional-dependencies]
 dev = [
-    "httpx",
-    "mypy", # was pinned to 0.782 (incompatible with typed-ast)
-    "pandas-stubs",
-    "pre-commit",
-    "pyfakefs",
-    "pyparsing", # was pinned to 2.4.7
-    "pyrsistent", # was pinned to 0.17.3
-    "pytest>8", # was pinned to 6.1.0
-    "pytest-asyncio", # was pinned to 0.14.0
-    "pytest-freezegun",
+    "httpx", # for testing with an async http client (used by fastapi.testing.TestClient)
+    "pre-commit", # configures and runs all of our linters
+    "pyfakefs", # a fake filesystem test fixture
+    "pyparsing",
+    "pyrsistent",
+    "pytest",
+    "pytest-asyncio", # async testing
+    "pytest-freezer",
     "pytest-cov",
     "pytest-mock",
     "types-PyYAML",
@@ -68,10 +45,6 @@ dev = [
     "types-requests",
     "types-setuptools",
     "types-ujson",
-]
-datascience = [
-    "jupyter", # was pinned to 1.0.0
-    "informus[dev]" # datascience is a superset of dev 
 ]
 
 [build-system]
@@ -86,7 +59,7 @@ packages = ["backend"]
 
 [tool.ruff]
 exclude = [
-    'ui',
+    'frontend',
 ]
 line-length = 120
 
