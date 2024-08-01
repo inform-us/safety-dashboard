@@ -1,9 +1,7 @@
 import { Outlet } from 'react-router-dom';
-
 import TopHeader from './TopHeader.tsx';
-
 import './Layout.css';
-import HomePage from '../../../pages/HomePage.tsx';
+import HomePage from './HomePage.tsx';
 
 const Layout = () => {
   return (
@@ -11,7 +9,7 @@ const Layout = () => {
       <TopHeader />
       <HomePage />
       <main className="main-container">
-        <Outlet /> {/* the outlet simply renders all of its child routes, see AppRoutes.tsx  */}
+        <Outlet /> {/* the outlet simply renders all of its child routes, see AppRoutes.tsx */}
       </main>
     </div>
   );

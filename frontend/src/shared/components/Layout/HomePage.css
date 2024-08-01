@@ -6,6 +6,7 @@
   grid-template-rows: repeat(3, 1fr);
   column-gap: 1.5vw;
   row-gap: 1.5vw;
+  margin: 0 auto;
   grid-template-areas:
     'patient-experience pharmacy safety-news education'
     'audit-qi learning-actions learning-actions infection-control'
@@ -50,4 +51,8 @@
 
 .tile--quality-safety {
   grid-area: quality-safety;
+}
+
+.tile-container a {
+  text-decoration: none;
 }

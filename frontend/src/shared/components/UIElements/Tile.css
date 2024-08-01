@@ -1,0 +1,72 @@
+/* Tile.css */
+
+.tile {
+  font: inherit;
+  width: 95%;
+  height: 95%;
+  border: 2px solid var(--color-primary-dark);
+  border-radius: 4px;
+  background: white;
+  color: var(--color-primary-dark);
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.5;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.tile:hover {
+  background-color: var(--color-primary-dark);
+  color: white;
+  border-color: var(--color-primary-dark);
+}
+
+.tile:active {
+  background-color: var(--color-primary-dark);
+  color: white;
+  border-color: var(--color-primary-dark);
+}
+
+.tile__title {
+  text-align: start;
+  font-weight: 700;
+  font-size: 1.1vw;
+}
+
+.tile__subtitle {
+  text-align: start;
+  font-size: 1vw;
+}
+
+.tile__horizontal-rule {
+  padding-top: 0.7rem;
+  margin: 0 -0.8rem;
+}
+
+.tile__horizontal-rule.dark {
+  border-bottom: 1px solid var(--color-primary-darker);
+}
+
+.tile__horizontal-rule.light {
+  border-bottom: 1px solid white;
+}
+
+.tile__body {
+  padding-top: 0.8vw;
+}
+
+.tile--small .tile__body .tile__header,
+.tile--small .tile__body .tile__footer {
+  font-size: 1vw;
+}
+
+.tile--large .tile__body .tile__center,
+.tile--large .tile__body .tile__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

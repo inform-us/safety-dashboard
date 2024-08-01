@@ -1,9 +1,9 @@
-import './TopHeader.css';
+import './Layout.css';
 
 const TopHeader = () => {
   return (
     <header className="top-header">
-      <h1>Safety Dashboard</h1>
+      <h1>Safety Comms Dashboard Landing Page</h1>
     </header>
   );
 };
