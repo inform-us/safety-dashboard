@@ -1,5 +1,3 @@
-/* Tile.css */
-
 .tile {
   font: inherit;
   width: 95%;
@@ -12,11 +10,13 @@
   cursor: pointer;
   text-decoration: none;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   line-height: 1.5;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  padding: 0.8rem;
 }
 
 .tile:hover {
@@ -32,23 +32,25 @@
 }
 
 .tile__title {
-  text-align: start;
+  text-align: center;
   font-weight: 700;
-  font-size: 1.1vw;
+  font-size: 1.5vw;
 }
 
 .tile__subtitle {
-  text-align: start;
+  text-align: center;
   font-size: 1vw;
+  margin-top: 0.5rem;
 }
 
 .tile__horizontal-rule {
+  width: 100%;
   padding-top: 0.7rem;
   margin: 0 -0.8rem;
 }
 
 .tile__horizontal-rule.dark {
-  border-bottom: 1px solid var(--color-primary-darker);
+  border-bottom: 1px solid var(--color-primary-dark);
 }
 
 .tile__horizontal-rule.light {
@@ -56,17 +58,22 @@
 }
 
 .tile__body {
-  padding-top: 0.8vw;
-}
-
-.tile--small .tile__body .tile__header,
-.tile--small .tile__body .tile__footer {
-  font-size: 1vw;
-}
-
-.tile--large .tile__body .tile__center,
-.tile--large .tile__body .tile__footer {
+  width: 100%;
+  padding: 0.2rem;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+.tile--large .tile__body .tile__center {
+  font-size: 1vw;
+  font-weight: bold;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
+}
+
+.tile--small .tile__body .tile__header:hover,
+.tile--small .tile__body .tile__footer:hover,
+.tile--large .tile__body .tile__center:hover,
+.tile--large .tile__body .tile__footer:hover {
+  color: white;
 }

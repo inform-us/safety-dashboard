@@ -16,23 +16,13 @@ type Props = {
 };
 
 const Tile = (props: Props) => {
-  const {
-    className,
-    size,
-    title,
-    subtitle,
-    bodyHeader,
-    bodyCenter,
-    bodyFooter,
-    style,
-    horizontalRuleColor,
-    to,
-  } = props;
+  const { className, size, title, subtitle, bodyHeader, bodyCenter, bodyFooter, style, horizontalRuleColor, to } =
+    props;
 
   return (
     <Link to={to} className={`tile tile--${className} tile--${size}`} style={style}>
-      <div className="tile__subtitle">{subtitle}</div>
       <div className="tile__title">{title}</div>
+      <div className="tile__subtitle">{subtitle}</div>
       <div className={`tile__horizontal-rule ${horizontalRuleColor}`}></div>
       <div className="tile__body">
         <div className="tile__header">{bodyHeader}</div>
