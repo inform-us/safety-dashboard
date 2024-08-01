@@ -1,21 +1,15 @@
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+
+import TopHeader from './TopHeader.tsx';
+
 import './Layout.css';
-import '/Users/katiebuntic/projects/safety_dashboard/frontend/src/styles.css';
-import Button from '../UIElements/Button';
+import HomePage from '../../../pages/HomePage.tsx';
 
 const Layout = () => {
   return (
     <div className="layout">
-      <Link to="/patient-experience">
-        <Button>Patient Experience</Button>
-      </Link>
-      <Link to ="/pharmacy">
-        <Button>Pharmacy</Button>
-      </Link>
-      <Link to="/education">
-        <Button>Education</Button>
-      </Link>
-
+      <TopHeader />
+      <HomePage />
       <main className="main-container">
         <Outlet /> {/* the outlet simply renders all of its child routes, see AppRoutes.tsx  */}
       </main>

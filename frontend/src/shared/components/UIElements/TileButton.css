@@ -1,0 +1,17 @@
+.button--tile {
+    font: inherit;
+    width: 95%;
+    height: 95%;
+    border: 2px solid var(--color-primary-dark);
+    border-radius: 4px;
+    background: white;
+    color: var(--color-primary-dark);
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
+  }

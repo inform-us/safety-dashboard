@@ -1,4 +1,4 @@
-const LearingAndOutcomes = () => {
+const LearingAndActions = () => {
   return (
     <div>
       <h2>Learning and Outcomes</h2>
@@ -7,4 +7,4 @@ const LearingAndOutcomes = () => {
   );
 };
 
-export default LearingAndOutcomes;
+export default LearingAndActions;

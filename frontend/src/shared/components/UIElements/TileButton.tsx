@@ -11,10 +11,10 @@ type Props = React.ComponentProps<'button'> & {
   active?: boolean; // the spc chart buttons utilize this, but it doesn't look like it's used here
 };
 
-const Button = (props: Props) => {
+const TileButton = (props: Props) => {
   return (
     <button
-      className={`button ${props.size ? `button--${props.size}` : ''} ${props.inverse ? 'button--inverse' : ''} ${props.active ? 'button--active' : ''}`}
+      className={`button--tile button ${props.size ? `button--${props.size}` : ''} ${props.inverse ? 'button--inverse' : ''} ${props.active ? 'button--active' : ''}`}
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}
@@ -26,4 +26,4 @@ const Button = (props: Props) => {
   );
 };
 
-export default Button;
+export default TileButton;

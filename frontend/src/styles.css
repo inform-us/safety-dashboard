@@ -1,8 +1,3 @@
-.center {
-  text-align: center;
-  margin: 0 auto;
-}
-
 *,
 *::before,
 *::after {
@@ -24,29 +19,11 @@
 }
 
 body {
-  margin: 0;
-  font-family: "Lato", sans-serif;
+  font-family: 'Helvetica', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background-color);
   color: var(--color-secondary-darkest);
-}
-
-.main-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 50vh;
-}
-
-.navbar {
-  height: 10%;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
