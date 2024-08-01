@@ -1,14 +1,20 @@
 .button {
   font: inherit;
-  padding: 0.5rem 1.5rem;
+  width: 150px;
+  height: 150px;
   border: 1px solid var(--color-primary-dark);
   border-radius: 4px;
-  background: var(--color-primary);
-  color: white;
+  background: white;
+  color: var(--color-primary-dark);
+  font-weight: bold;
   cursor: pointer;
   margin-right: 1rem;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.5;
 }
 
 .button:focus {
@@ -19,8 +25,8 @@
 .button:active,
 .button--active {
   border-width: 2px;
-  background: var(--color-primary-dark);
-  border-color: var(--color-primary-darker);
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-dark);
 }
 
 .button--danger {
@@ -38,21 +44,6 @@
 .button:hover:disabled,
 .button:active:disabled {
   background: #ccc;
-  color: #979797;
+  color: #8b2b2b;
   border-color: #ccc;
-  cursor: not-allowed;
-}
-
-.button--small {
-  font-size: 0.8rem;
-}
-
-.button--big {
-  font-size: 1.5rem;
-}
-
-@media (min-width: 2500px) {
-  .button {
-    font-size: 1.5rem;
-  }
 }

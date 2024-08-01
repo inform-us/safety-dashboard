@@ -1,20 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+// App.tsx
 import "./App.css";
+import AppRoutes from "./AppRoutes";
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <div className="home">
-      <h1>Welcome to the Home Page</h1>
-      <div className="tiles">
-        <Link to="/education" className="button">
-          Education
-        </Link>
-        <Link to="/patient-experience" className="button">
-          Patient Experience
-        </Link>
+      <AppRoutes />
       </div>
-    </div>
   );
 };
 

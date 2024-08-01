@@ -1,16 +1,21 @@
 import React from 'react';
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
-import App from './App';
-import Education from './components/Education';
-import PatientExperience from './components/PatientExperience';
+import Education from './pages/Education';
+import Layout from './shared/components/Layout/Layout';
+import NotFound from './pages/NotFound';
+import Pharmacy from './pages/Pharmacy';
+import PatientExperience from './pages/PatientExperience';
 
 const AppRoutes: React.FC = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<App />}>
+      <>
+        <Route path="/" element={<Layout />} />
         <Route path="education" element={<Education />} />
+        <Route path="pharmacy" element={<Pharmacy />} />
         <Route path="patient-experience" element={<PatientExperience />} />
-      </Route>
+        <Route path="*" element={<NotFound />} />
+      </>
     )
   );
 

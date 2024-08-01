@@ -1,0 +1,32 @@
+/* Overall layout for the page */
+.layout {
+  width: 100vw; /* Use viewport width */
+  height: 100vh; /* Use viewport height */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  grid-template-rows: repeat(5, 1fr); /* 5 equal rows */
+  grid-template-areas:
+    "header header header header"
+    "button1 button2 button3 button4"
+    "button5 button6 button7 button8"
+    "button9 button10 button10 button10"
+    "button11 button12 button13 button14";
+}
+
+.header {
+  grid-area: header;
+  background-color: #f0f0f5;
+  padding: 1rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.double-size {
+  grid-column: span 2; /* Span 2 columns */
+  grid-row: span 2; /* Span 2 rows */
+}
+
+.main-container {
+  grid-area: main-container;
+  margin: 1vw 2vw 1vw 2vw;
+}
