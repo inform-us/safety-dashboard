@@ -6,14 +6,14 @@ import Button from '../UIElements/Button';
 const Layout = () => {
   return (
     <div className="layout">
-      <Link to="/education">
-        <Button>Education</Button>
-      </Link>
       <Link to="/patient-experience">
         <Button>Patient Experience</Button>
       </Link>
       <Link to ="/pharmacy">
         <Button>Pharmacy</Button>
+      </Link>
+      <Link to="/education">
+        <Button>Education</Button>
       </Link>
 
       <main className="main-container">
