@@ -1,6 +1,6 @@
 import { Outlet, Link } from 'react-router-dom';
 import './Layout.css';
-import 'styles.css';
+import '/Users/katiebuntic/projects/safety_dashboard/frontend/src/styles.css';
 import Button from '../UIElements/Button';
 
 const Layout = () => {

@@ -1,10 +1,10 @@
-
 const Pharmacy = () => {
-    return (
-        <div>
-            <h1>Pharmacy</h1>
-        </div>
-    )
-}
+  return (
+    <div>
+      <h2>Pharmacy</h2>
+      <p>This is the pharmacy page.</p>
+    </div>
+  );
+};
 
 export default Pharmacy;
