@@ -1,5 +1,9 @@
 # Informus Safety Dashboard
 
+This is an experimental platform designed to bring together several data sources into one central hub.
+
+This should be considered a proof of concept. The technical architecture is fragile and should not be expected to run smoothly.
+
 # Deployment to GAE
 
 ## Frontend
