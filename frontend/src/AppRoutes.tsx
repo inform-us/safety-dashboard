@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 import Layout from './shared/components/Layout/Layout'; // Import Layout
-import HomeTiles from './shared/components/Layout/HomeTiles'; // Assuming HomeTiles is a page
+import HomeTiles from './pages/HomeTiles'; // Assuming HomeTiles is a page
 import Education from './pages/Education';
 import NotFound from './pages/NotFound';
 import Pharmacy from './pages/Pharmacy';

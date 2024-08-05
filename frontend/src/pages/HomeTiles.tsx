@@ -1,7 +1,7 @@
 import './HomeTiles.css';
-import Tile from '../UIElements/Tile';
-import '../UIElements/Tile.css';
-import '../../../../src/styles.css';
+import Tile from '../shared/components/UIElements/Tile'; 
+import '../shared/components/UIElements/Tile.css';
+import '../styles.css';
 
 const HomeTiles = () => {
   return (
