@@ -37,12 +37,6 @@
   font-size: 1.5vw;
 }
 
-.tile__subtitle {
-  text-align: center;
-  font-size: 1vw;
-  margin-top: 0.5rem;
-}
-
 .tile__horizontal-rule {
   width: 100%;
   padding-top: 0.7rem;
@@ -59,16 +53,11 @@
 
 .tile__body {
   width: 100%;
-  padding: 0.2rem;
+  font-size: 0.8vw;
+  padding: 1vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.tile--large .tile__body .tile__center {
-  font-size: 1vw;
-  font-weight: bold;
-  margin-top: 0.5vw;
-  margin-bottom: 0.5vw;
 }
 
 .tile--small .tile__body .tile__header:hover,

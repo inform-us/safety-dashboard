@@ -48,3 +48,6 @@ informus.egg-info
 coverage.xml
 sut.csv
 
+node_modules/
+package.json
+package-lock.json

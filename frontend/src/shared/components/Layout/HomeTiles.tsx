@@ -1,9 +1,9 @@
-import './HomePage.css';
+import './HomeTiles.css';
 import Tile from '../UIElements/Tile';
 import '../UIElements/Tile.css';
 import '../../../../src/styles.css';
 
-const HomePage = () => {
+const HomeTiles = () => {
   return (
     <div className="tile-container">
       <div className="tile--patient-experience">
@@ -12,13 +12,11 @@ const HomePage = () => {
           className="patient-experience"
           size="large"
           title="Patient Experience"
-          subtitle={null}
-          bodyHeader={null}
-          bodyCenter={null}
-          bodyFooter={null}
+          body_paragraph1={null}
+          body_paragraph2={null}
+          body_paragraph3={null}
           style={{}}
-          horizontalRuleColor="dark"
-        />
+          horizontalRuleColor="dark"     />
       </div>
       <div className="tile--pharmacy">
         <Tile
@@ -26,10 +24,9 @@ const HomePage = () => {
           className="pharmacy"
           size="large"
           title="Pharmacy"
-          subtitle={null}
-          bodyHeader={null}
-          bodyCenter={null}
-          bodyFooter={null}
+          body_paragraph1={null}
+          body_paragraph2={null}
+          body_paragraph3={null}
           style={{}}
           horizontalRuleColor="dark"
         />
@@ -40,10 +37,9 @@ const HomePage = () => {
           className="safety-news"
           size="large"
           title="Safety News"
-          subtitle={null}
-          bodyHeader={null}
-          bodyCenter={'Message of the week'}
-          bodyFooter={null}
+          body_paragraph1={null}
+          body_paragraph2={null}
+          body_paragraph3={null}
           style={{}}
           horizontalRuleColor="dark"
         />
@@ -54,10 +50,9 @@ const HomePage = () => {
           className="education"
           size="large"
           title="Education"
-          subtitle={null}
-          bodyHeader={null}
-          bodyCenter={null}
-          bodyFooter={null}
+          body_paragraph1={null}
+          body_paragraph2={null}
+          body_paragraph3={null}
           style={{}}
           horizontalRuleColor="dark"
         />
@@ -68,10 +63,9 @@ const HomePage = () => {
           className="audit-qi"
           size="large"
           title="Audit & QI"
-          subtitle={null}
-          bodyHeader={null}
-          bodyCenter={'T06 feeding and nutrition magnets are now in full use above each bed space. Colour correspond to the colours of the rainbow indication NBL, fluid only intake, soft foods, solids...The next Audit and QI meeting is on January 11 1330-1430 and Lisa will be presenting her Stop Think Glove project.'}
-          bodyFooter={null}
+          body_paragraph1={'T06 feeding and nutrition magnets are now in full use above each bed space.'}
+          body_paragraph2={'Colour correspond to the colours of the rainbow indication NBL, fluid only intake, soft foods, solids...'}
+          body_paragraph3={'The next Audit and QI meeting is on January 11 1330-1430 and Lisa will be presenting her Stop Think Glove project.'}
           style={{}}
           horizontalRuleColor="dark"
         />
@@ -82,10 +76,9 @@ const HomePage = () => {
           className="learning-actions"
           size="large"
           title="Learning & Actions"
-          subtitle={null}
-          bodyHeader={'Incident of agression'}
-          bodyCenter={'A patient was admitted to the unit with a history of aggression..xxx'}
-          bodyFooter={'Learning and Actions..xxxxx'}
+          body_paragraph1={'Incident of aggression Summary xxxxxxxx Investivation xxxxxxx Learning and actions xxxxxxx'}
+          body_paragraph2={'Incident of missed deterioation Summaryxxxxxxxx 1/ 2a interim Weekly Investivation'}
+          body_paragraph3={'Learning and actions'}
           style={{}}
           horizontalRuleColor="dark"
         />
@@ -96,10 +89,9 @@ const HomePage = () => {
           className="infection-control"
           size="large"
           title="Infection Control"
-          subtitle={null}
-          bodyHeader={null}
-          bodyCenter={null}
-          bodyFooter={null}
+          body_paragraph1={null}
+          body_paragraph2={null}
+          body_paragraph3={null}
           style={{}}
           horizontalRuleColor="dark"
         />
@@ -110,10 +102,9 @@ const HomePage = () => {
           className="icu-examplar"
           size="large"
           title="ICU Examplar"
-          subtitle={null}
-          bodyHeader={null}
-          bodyCenter={'We have improved over the last 3 months with our pressure ulcers Please remember to turn your patients'}
-          bodyFooter={null}
+          body_paragraph1={null}
+          body_paragraph2={null}
+          body_paragraph3={null}
           style={{}}
           horizontalRuleColor="dark"
         />
@@ -124,10 +115,9 @@ const HomePage = () => {
           className="headlines"
           size="large"
           title="Headlines"
-          subtitle={null}
-          bodyHeader={'News news news'}
-          bodyCenter={null}
-          bodyFooter={null}
+          body_paragraph1={'News'}
+          body_paragraph2={'Events'}
+          body_paragraph3={'Announcements'}
           style={{}}
           horizontalRuleColor="dark"
         />
@@ -138,10 +128,9 @@ const HomePage = () => {
           className="quality-safety"
           size="large"
           title="Quality & Safety"
-          subtitle={null}
-          bodyHeader={null}
-          bodyCenter={'Bulletin - link to share point document'}
-          bodyFooter={null}
+          body_paragraph1={'Quality'}
+          body_paragraph2={'Safety'}
+          body_paragraph3={null}
           style={{}}
           horizontalRuleColor="dark"
         />
@@ -150,4 +139,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default HomeTiles;
