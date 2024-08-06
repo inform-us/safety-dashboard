@@ -1,0 +1,60 @@
+.tile-container {
+  width: 95%; 
+  height: 45vw; 
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: 1.5vw;
+  row-gap: 1.5vw;
+  margin: 0 auto;
+  top:0;
+  padding: 0.5vw;
+  grid-template-areas:
+    'patient-experience pharmacy safety-news education'
+    'audit-qi learning-actions learning-actions infection-control'
+    'icu-examplar headlines headlines quality-safety';
+}
+
+.tile--patient-experience {
+  grid-area: patient-experience;
+}
+
+.tile--pharmacy {
+  grid-area: pharmacy;
+}
+
+.tile--safety-news {
+  grid-area: safety-news;
+}
+
+.tile--education {
+  grid-area: education;
+}
+
+.tile--audit-qi {
+  grid-area: audit-qi;
+}
+
+.tile--learning-actions {
+  grid-area: learning-actions;
+}
+
+.tile--infection-control {
+  grid-area: infection-control;
+}
+
+.tile--icu-examplar {
+  grid-area: icu-examplar;
+}
+
+.tile--headlines {
+  grid-area: headlines;
+}
+
+.tile--quality-safety {
+  grid-area: quality-safety;
+}
+
+.tile-container a {
+  text-decoration: none;
+}

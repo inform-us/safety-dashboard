@@ -3,8 +3,10 @@ compose/**/prod/*.env
 compose/**/staging/*.env
 monitoring/*.env
 compose/**/docker-testing/*.env
+dev-dsd.env
+db.txt
+api/data/emap/ghost_patients.txt
 .env
-.env.production
 
 # IDEs - PyCharm & VSCode
 .idea/
@@ -45,3 +47,7 @@ informus.egg-info
 # testing
 coverage.xml
 sut.csv
+
+node_modules/
+package.json
+package-lock.json

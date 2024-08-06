@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: hsl(182, 94%, 93%);
+
+  --color-primary: hsl(184, 33%, 60%);
+  --color-primary-dark: hsl(184, 33%, 40%);
+  --color-primary-darker: hsl(184, 33%, 30%);
+  --color-primary-darkest: hsl(184, 33%, 20%);
+
+  --color-secondary: hsl(210, 33%, 60%);
+  --color-secondary-dark: hsl(210, 33%, 40%);
+  --color-secondary-darker: hsl(210, 33%, 30%);
+  --color-secondary-darkest: hsl(210, 33%, 20%);
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--color-secondary-darkest);
+  justify-content: center;
+  align-items: center;
+}
