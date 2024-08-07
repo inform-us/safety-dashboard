@@ -20,7 +20,7 @@ const App = () => {
         header="Welcome to the UCLH Safety Dashboard"
         footer={<Button onClick={closeModal}>Close</Button>}
       >
-        <p>Please note that this is dashboard an experimental design.</p>
+        <p>Please note that this dashboard is an experimental design.</p>
       </Modal>
     </div>
   );
