@@ -17,7 +17,7 @@ dependencies = [
     "APScheduler", # scheduler for tasks
     "arrow", # better alternative to python's builtin datetime
     "environs", # for environment variable handling
-    "fastapi", # our main web api framework
+    "fastapi[standard]", # our main web api framework
     "ipython", # useful for debugging live running containers on the GAEs
     "Jinja2", # templating engine for fastapi, used in the backend ui
     "motor", # async mongodb (also installs pymongo which we use directly)
