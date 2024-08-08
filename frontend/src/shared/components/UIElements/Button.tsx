@@ -7,14 +7,32 @@ type Props = React.ComponentProps<'button'> & {
   type?: string;
   name?: string;
   value?: string;
-  onClick?: any; // any so that it can be a function that takes any arguments
-  active?: boolean; // the spc chart buttons utilize this, but it doesn't look like it's used here
+  onClick?: any;
+  active?: boolean;
+  href?: string;
 };
 
 const Button = (props: Props) => {
+  if (props.href) {
+    return (
+      <a
+        className={`button ${props.size ? `button--${props.size}` : ''} ${props.inverse ? 'button--inverse' : ''} ${
+          props.active ? 'button--active' : ''
+        }`}
+        href={props.href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {props.children}
+      </a>
+    );
+  }
+
   return (
     <button
-      className={`button ${props.size ? `button--${props.size}` : ''} ${props.inverse ? 'button--inverse' : ''} ${props.active ? 'button--active' : ''}`}
+      className={`button ${props.size ? `button--${props.size}` : ''} ${props.inverse ? 'button--inverse' : ''} ${
+        props.active ? 'button--active' : ''
+      }`}
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}

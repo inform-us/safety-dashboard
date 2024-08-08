@@ -1,0 +1,92 @@
+.patient-experience-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.patient-experience {
+  display: grid;
+  grid-template-areas:
+    'charts learning'
+    'peec peec';
+  grid-template-columns: 3fr 1fr;
+  gap: 1rem;
+  height: auto;
+}
+
+.patient-experience ul {
+  list-style-type: none;
+  padding: 1rem;
+}
+
+.charts__container {
+  grid-area: charts;
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.learning-actions__container {
+  grid-area: learning;
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.patient-experience__header {
+  background-color: var(--color-primary-dark);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.patient-experience__charts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.chart-section {
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+
+.chart {
+  background-color: #f4f4f4;
+  height: 200px;
+  margin-bottom: 1rem;
+}
+
+.peec__container {
+  grid-area: peec;
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.peec__container ul {
+  list-style-type: none;
+  padding: 1rem;
+}
+
+.peec__header {
+  background-color: var(--color-primary-dark);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.learning-actions {
+  margin-bottom: 1rem;
+}

@@ -12,6 +12,7 @@
   justify-content: center;
   text-align: center;
   line-height: 1.5;
+  padding: 0.5rem 1.5rem;
 }
 
 .button:focus {

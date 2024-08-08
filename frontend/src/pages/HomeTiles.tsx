@@ -1,5 +1,5 @@
 import './HomeTiles.css';
-import Tile from '../shared/components/UIElements/Tile'; 
+import Tile from '../shared/components/UIElements/Tile';
 import '../shared/components/UIElements/Tile.css';
 import '../styles.css';
 
@@ -16,7 +16,8 @@ const HomeTiles = () => {
           body_paragraph2={null}
           body_paragraph3={null}
           style={{}}
-          horizontalRuleColor="dark"     />
+          horizontalRuleColor="dark"
+        />
       </div>
       <div className="tile--pharmacy">
         <Tile
@@ -64,8 +65,12 @@ const HomeTiles = () => {
           size="large"
           title="Audit & QI"
           body_paragraph1={'T06 feeding and nutrition magnets are now in full use above each bed space.'}
-          body_paragraph2={'Colour correspond to the colours of the rainbow indication NBL, fluid only intake, soft foods, solids...'}
-          body_paragraph3={'The next Audit and QI meeting is on January 11 1330-1430 and Lisa will be presenting her Stop Think Glove project.'}
+          body_paragraph2={
+            'Colour correspond to the colours of the rainbow indication NBL, fluid only intake, soft foods, solids...'
+          }
+          body_paragraph3={
+            'The next Audit and QI meeting is on January 11 1330-1430 and Lisa will be presenting her Stop Think Glove project.'
+          }
           style={{}}
           horizontalRuleColor="dark"
         />
