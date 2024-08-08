@@ -1,4 +1,4 @@
-FROM node:20-bookworm-slim
+FROM node:22-bookworm-slim
 
 # these args are necessary for enabling outside network communications on the GAE
 # they are set from environment variables that exist on the GAE and may not be set on your local environment, so please ignore any docker warnings
