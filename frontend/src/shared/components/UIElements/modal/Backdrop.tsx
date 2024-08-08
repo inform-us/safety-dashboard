@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import './Backdrop.css'; 
+import './Backdrop.css';
 
 type Props = {
   onClick: () => void;
@@ -8,10 +8,7 @@ type Props = {
 
 const Backdrop = (props: Props) => {
   return ReactDOM.createPortal(
-    <div
-      className={`backdrop ${props.show ? 'show' : ''}`}
-      onClick={props.onClick}
-    ></div>,
+    <div className={`backdrop ${props.show ? 'show' : ''}`} onClick={props.onClick}></div>,
     document.getElementById('backdrop-hook')!
   );
 };

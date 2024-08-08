@@ -16,7 +16,9 @@ const Button = (props: Props) => {
   if (props.href) {
     return (
       <a
-        className={`button ${props.size ? `button--${props.size}` : ''} ${props.inverse ? 'button--inverse' : ''} ${props.active ? 'button--active' : ''}`}
+        className={`button ${props.size ? `button--${props.size}` : ''} ${props.inverse ? 'button--inverse' : ''} ${
+          props.active ? 'button--active' : ''
+        }`}
         href={props.href}
         target="_blank"
         rel="noopener noreferrer"
@@ -28,7 +30,9 @@ const Button = (props: Props) => {
 
   return (
     <button
-      className={`button ${props.size ? `button--${props.size}` : ''} ${props.inverse ? 'button--inverse' : ''} ${props.active ? 'button--active' : ''}`}
+      className={`button ${props.size ? `button--${props.size}` : ''} ${props.inverse ? 'button--inverse' : ''} ${
+        props.active ? 'button--active' : ''
+      }`}
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}
