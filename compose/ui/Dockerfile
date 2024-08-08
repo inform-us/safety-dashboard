@@ -31,7 +31,7 @@ COPY . .
 RUN npm ci --silent
 
 # we use the serve package to expose the frontend as it offers a simpler and cleaner approach than setting up a more complex nginx configuration
-RUN npm install serve@14.2 -g --silent
+RUN npm install serve@14.2.3 -g --silent
 
 ARG RUNNING_ENV
 
